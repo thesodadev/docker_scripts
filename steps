@@ -1,0 +1,2 @@
+docker build -t nds_dev_image ./
+docker run --name nds_dev -v /home/sauce/dev/nds:/nds -tdi nds_dev_image bash
