@@ -3,7 +3,7 @@ ENV REPO_OPENGL="https://github.com/thesodadev/OpenGL-Registry.git" \
     REPO_EGL="https://github.com/thesodadev/EGL-Registry.git" \
     REPO_GLFIXES="https://github.com/thesodadev/glfixes"
 RUN apt update && \
-    apt install build-essential binutils-arm-none-eabi gcc-arm-none-eabi libnewlib-dev- && \ 
+    apt install build-essential binutils-arm-none-eabi gcc-arm-none-eabi libnewlib-dev- -y && \ 
     apt install blender git python libtool autoconf automake -y && \
     apt install libglu1-mesa-dev libxmu-dev libxi-dev libgl-dev libfreeimage-dev -y && \
     mkdir /nds && mkdir /nds/sdk && \
