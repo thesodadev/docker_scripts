@@ -19,6 +19,7 @@ RUN apt update && \
     ./configure --prefix=/usr/lib --disable-newlib-supplied-syscalls --enable-newlib-mb --disable-newlib-wide-orient --target=arm-none-eabi && \
     make && make install && \
     cd /nds/sdk && git clone -b standalone_build https://github.com/thesodadev/libnds.git && cd libnds && make all && make install && \
+    cd /nds/sdk && git clone -b standalone_build https://github.com/thesodadev/libfat.git && cd libfat && make all && make install && \
     cd /nds/sdk && git clone -b standalone_build https://github.com/thesodadev/ndscrt.git && cd ndscrt && make all && make install && \
     cd /nds/sdk && git clone https://github.com/thesodadev/blender_scripts.git && cd blender_scripts && make install && \
     cd /nds && rm -rf sdk
