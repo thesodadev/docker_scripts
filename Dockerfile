@@ -20,6 +20,7 @@ RUN apt update && \
     make && make install && \
     cd /nds/sdk && git clone -b standalone_build https://github.com/thesodadev/libnds.git && cd libnds && make all && make install && \
     cd /nds/sdk && git clone -b standalone_build https://github.com/thesodadev/libfat.git && cd libfat && make all && make install && \
+    cd /nds/sdk && git clone -b standalone_build https://github.com/thesodadev/libfilesystem.git && cd libfilesystem && make all && make install && \
     cd /nds/sdk && git clone -b standalone_build https://github.com/thesodadev/ndscrt.git && cd ndscrt && make all && make install && \
     cd /nds/sdk && git clone https://github.com/thesodadev/blender_scripts.git && cd blender_scripts && make install && \
     cd /nds && rm -rf sdk
