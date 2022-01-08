@@ -18,7 +18,15 @@ RUN apt update && \
     CFLAGS_FOR_TARGET="-O2 -ffunction-sections -fdata-sections" && \
     ./configure --prefix=/usr/lib --disable-newlib-supplied-syscalls --enable-newlib-mb --disable-newlib-wide-orient --target=arm-none-eabi && \
     make && make install && \
-    cd /nds/sdk && git clone -b standalone_build https://github.com/thesodadev/libnds.git && cd libnds && make all && make install && \
+    cd /nds/sdk && git clone -b standalone_build https://github.com/thesodadev/libnds.git && cd libnds && \
+    TARGET=ARM9 make all && TARGET=ARM9 make install && TARGET=ARM9 make clean && \
+    TARGET=ARM7 make all && TARGET=ARM7 make install && TARGET=ARM7 make clean && \
+    cd /nds/sdk && git clone -b standalone_build https://github.com/thesodadev/maxmod.git && cd maxmod && \
+    TARGET=ARM9 make all && TARGET=ARM9 make install && TARGET=ARM9 make clean && \
+    TARGET=ARM7 make all && TARGET=ARM7 make install && TARGET=ARM7 make clean && \
+    cd /nds/sdk && git clone -b standalone_build https://github.com/thesodadev/dswifi.git && cd dswifi && \
+    TARGET=ARM9 make all && TARGET=ARM9 make install && TARGET=ARM9 make clean && \
+    TARGET=ARM7 make all && TARGET=ARM7 make install && TARGET=ARM7 make clean && \
     cd /nds/sdk && git clone -b standalone_build https://github.com/thesodadev/libfat.git && cd libfat && make all && make install && \
     cd /nds/sdk && git clone -b standalone_build https://github.com/thesodadev/libfilesystem.git && cd libfilesystem && make all && make install && \
     cd /nds/sdk && git clone -b standalone_build https://github.com/thesodadev/ndscrt.git && cd ndscrt && make all && make install && \
